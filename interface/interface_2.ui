@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>861</width>
+    <height>543</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(71, 66, 66);
+</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>823</width>
+     <height>452</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Фамилия</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Организация</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Должность</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Контактные данные</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Каков уровень влияния стейкхолдера на рабочий процесс?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QComboBox" name="comboBox">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>высокий</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>средний</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>низкий</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Каков настрой стейкхолдера?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QComboBox" name="comboBox_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>вовлеченность</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>лояльность</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>нейтралитет</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>нелояльность</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>вредительство</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Что важно и нужно этому стейкхолдеру?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QComboBox" name="comboBox_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>прибыль</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>паблисити</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ничего</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>провал проекта</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Каких конкретных результатов ожидает стейкхолдер?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QComboBox" name="comboBox_4">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>успех</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>никаких ожиданий</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>неудача</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>К какому кругу относится стейкхолдер?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QComboBox" name="comboBox_5">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>союзники</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>поддерживающие</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>нейтральные</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>неохотно участвующие</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>оппоненты</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Влияние проектного менеджера на стейкхолдера?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QComboBox" name="comboBox_6">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>высокий</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>средний</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>низкий</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_12">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>На сколько проблематичен стейкхолдер?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QComboBox" name="comboBox_7">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>безпроблемный</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>средне-проблематичный</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>проблематичный</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_13">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>На каком уровне находится коммуникативность индивида?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QComboBox" name="comboBox_8">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+height: 25px;
+weight: 50px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>высокая</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>средняя</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>низкая</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(71, 66, 66);
+font-size: 20px;
+color: rgb(255, 255, 255); 
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>Имя</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); </string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); </string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); </string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); </string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(38, 34, 34);
+font-size: 20px;
+color: rgb(255, 255, 255); </string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>490</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: rgb(38, 34, 34);
+	width: 75px;
+	height: 50px;
+	font-size: 20px;
+	border: none;
+	text-align: center;
+	color: white;
+}
+
+QPushButton:hover {
+	background-color: rgb(43, 43, 43);
+}
+
+QPushButton:pressed {
+	background-color: rgb(79, 76, 76);
+}</string>
+   </property>
+   <property name="text">
+    <string>Ок</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

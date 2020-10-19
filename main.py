@@ -28,6 +28,8 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
     This class will have all fields and methods for stakeholder analys
     '''
 
+    __result = []
+
     def __init__(self):
         '''
         Construktor of our class
@@ -40,14 +42,15 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         # Показать наше окно
         self.show()
 
-        self.pushButton.clicked.connect(self.digit_pressed)
+        self.pushButton.clicked.connect(self.making_analys)
 
-    def digit_pressed(self):
+    def get_data(self):
         '''
         Method, thar return some data of person
         '''
 
         # personal data
+        ui = QtWidgets.QWidget()
         name_line = ui.lineEdit.text()
         family_name_line = ui.lineEdit_2.text()
         organisation_name_line = ui.lineEdit_3.text()   
@@ -64,44 +67,43 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         param_7 = ui.comboBox_7.currentText()
         param_8 = ui.comboBox_8.currentText()
 
-        result = []
-        result.append(name_line)
-        result.append(family_name_line)
-        result.append(organisation_name_line)
-        result.append(position_line)
-        result.append(contacts_line)
-        result.append(param_1)
-        result.append(param_2)
-        result.append(param_3)
-        result.append(param_4)
-        result.append(param_5)
-        result.append(param_6)
-        result.append(param_7)
-        result.append(param_8)
+        self.__result.append(name_line)
+        self.__result.append(family_name_line)
+        self.__result.append(organisation_name_line)
+        self.__result.append(position_line)
+        self.__result.append(contacts_line)
+        self.__result.append(param_1)
+        self.__result.append(param_2)
+        self.__result.append(param_3)
+        self.__result.append(param_4)
+        self.__result.append(param_5)
+        self.__result.append(param_6)
+        self.__result.append(param_7)
+        self.__result.append(param_8)
 
-        return result
+        return self.__result
         
-def making_analys(result_param):
-    '''
-    This function will make analys and get the result 
-    '''
-    # score result of parametrs 
-    g_1 = analys_param_1.make_analys(result_param[5])
-    g_2 = analys_param_2.make_analys(result_param[6])
-    g_3 = analys_param_3.make_analys(result_param[7])
-    g_4 = analys_param_4.make_analys(result_param[8])
-    g_5 = analys_param_5.make_analys(result_param[9])
-    g_6 = analys_param_6.make_analys(result_param[10])
-    g_7 = analys_param_7.make_analys(result_param[11])
-    g_8 = analys_param_8.make_analys(result_param[12])
+    def making_analys(self):
+        '''
+        This function will make analys and get the result 
+        '''
+        # score result of parametrs 
+        g_1 = analys_param_1.make_analys(self.__result[5])
+        g_2 = analys_param_2.make_analys(self.__result[6])
+        g_3 = analys_param_3.make_analys(self.__result[7])
+        g_4 = analys_param_4.make_analys(self.__result[8])
+        g_5 = analys_param_5.make_analys(self.__result[9])
+        g_6 = analys_param_6.make_analys(self.__result[10])
+        g_7 = analys_param_7.make_analys(self.__result[11])
+        g_8 = analys_param_8.make_analys(self.__result[12])
 
-    # final result for matrix of stakeholder
-    result_x = final_result.scoring_1(g_1=g_1, g_2=g_2, g_7=g_7, g_8=g_8)
-    result_y = final_result.scoring_2(g_3=g_3, g_4=g_4, g_5=g_5, g_6=g_6)
+        # final result for matrix of stakeholder
+        result_x = final_result.scoring_1(g_1=g_1, g_2=g_2, g_7=g_7, g_8=g_8)
+        result_y = final_result.scoring_2(g_3=g_3, g_4=g_4, g_5=g_5, g_6=g_6)
 
-    # what to do with this person
-    final = final_result.make_simple_analys(x=result_x, y=result_y)
-    return final
+        # what to do with this person
+        final = final_result.make_simple_analys(x=result_x, y=result_y)
+        return final
 
 # def launchApp(app):
 #     appController = ApplicationController()
@@ -113,19 +115,13 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
     # Сoздание инстанса класса , который мы создадим далее
-    # Dialog = QtWidgets.QDialog()
-    # ui = Ui_Dialog()
-    # ui.setupUi(Dialog)
-    # Dialog.show()
-
-    # result = launchApp(app=app)
-
     stakeholder = Stakeholder()
-
+    # final_get = making_analys()
+    stakeholder.get_data()
     
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
-    Dialog.show()
+    # Dialog.show()
     input()
     sys.exit()

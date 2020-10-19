@@ -124,4 +124,4 @@ if __name__ == "__main__":
     ui.setupUi(Dialog)
     # Dialog.show()
     # input()
-    sys.exit()
+    sys.exit(app.exec_())

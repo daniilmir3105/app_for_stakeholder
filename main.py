@@ -18,10 +18,10 @@ analys_param_8 = base_class_analys.communicativity()
 # making object to become a result 
 final_result = become_result.result()
 
-Dialog = QtWidgets.QDialog()
-ui = Ui_Dialog()
-ui.setupUi(Dialog)
-Dialog.show()
+# Dialog = QtWidgets.QDialog()
+# ui = Ui_Dialog()
+# ui.setupUi(Dialog)
+# Dialog.show()
 
 class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
     '''
@@ -103,10 +103,10 @@ def making_analys(result_param):
     final = final_result.make_simple_analys(x=result_x, y=result_y)
     return final
 
-def launchApp(app):
-    appController = ApplicationController()
-    appController.showMainWindow()
-    return app.exec_()
+# def launchApp(app):
+#     appController = ApplicationController()
+#     appController.showMainWindow()
+#     return app.exec_()
 
 if __name__ == "__main__":
     # Новый экземпляр QApplication
@@ -118,8 +118,14 @@ if __name__ == "__main__":
     # ui.setupUi(Dialog)
     # Dialog.show()
 
-    result = launchApp(app=app)
+    # result = launchApp(app=app)
 
     stakeholder = Stakeholder()
 
-    sys.exit(result)
+    
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    input()
+    sys.exit()

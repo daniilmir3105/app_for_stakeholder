@@ -5,6 +5,7 @@ from interface_2 import Ui_Dialog
 import base_class_analys
 import become_result
 import os
+import xlwt
 
 # making objects for analys
 analys_param_1 = base_class_analys.impact_level()
@@ -101,10 +102,6 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
 
         # what to do with this person
         final = final_result.make_simple_analys(x=result_x, y=result_y)
-        # print(self.__result)
-        # print(result_x)
-        # print(result_y)
-        # print(final)
 
         if final == 'Данная личность не является стейкхолдером.':
             final_data = os.startfile(r'C:\Users\lenovo\OneDrive - Peter the Great St. Petersburg Polytechnical University\Документы\Daniil\programming\python\projects\app_for_stakeholder\not.png')
@@ -117,6 +114,60 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         else: 
             final_data = os.startfile(r'C:\Users\lenovo\OneDrive - Peter the Great St. Petersburg Polytechnical University\Документы\Daniil\programming\python\projects\app_for_stakeholder\protect.png')
     
+        if True:
+            pass
+        else:
+            font0 = xlwt.Font()
+            font0.name = 'Times New Roman'
+            font0.colour_index = xlwt.Style.colour_map['black']
+            font0.bold = True
+
+            font1 = xlwt.Font()
+            font1.name = 'Times New Roman'
+            font1.colour_index = xlwt.Style.colour_map['black']
+            font1.bold = False
+
+            style0 = xlwt.XFStyle()
+            style0.font = font0
+
+            style1 = xlwt.XFStyle()
+            style1.font = font1
+
+            wb = xlwt.Workbook()
+            ws = wb.add_sheet('A Test Sheet')
+
+            ws.write(0, 0, 'Имя', style0)
+            ws.write(0, 1, 'Фамилия', style0)
+            ws.write(0, 2, 'Организация', style0)
+            ws.write(0, 3, 'Должность', style0)
+            ws.write(0, 4, 'Контактные данные', style0)
+            ws.write(0, 5, 'Контактные данные', style0)
+            ws.write(0, 6, 'Контактные данные', style0)
+            ws.write(0, 7, 'Контактные данные', style0)
+            ws.write(0, 8, 'Контактные данные', style0)
+            ws.write(0, 9, 'Контактные данные', style0)
+            ws.write(0, 10, 'Контактные данные', style0)
+            ws.write(0, 11, 'Контактные данные', style0)
+            ws.write(0, 12, 'Контактные данные', style0)
+            ws.write(0, 13, 'Рекомендации', style0)
+
+            ws.write(1, 0, self.__result[0], style1)
+            ws.write(1, 1, self.__result[1], style1)
+            ws.write(1, 2, self.__result[2], style1)
+            ws.write(1, 3, self.__result[3], style1)
+            ws.write(1, 4, self.__result[4], style1)
+            ws.write(1, 5, self.__result[5], style1)
+            ws.write(1, 6, self.__result[6], style1)
+            ws.write(1, 7, self.__result[7], style1)
+            ws.write(1, 8, self.__result[8], style1)
+            ws.write(1, 9, self.__result[9], style1)
+            ws.write(1, 10, self.__result[10], style1)
+            ws.write(1, 11, self.__result[11], style1)
+            ws.write(1, 12, self.__result[12], style1)
+            ws.write(1, 13, final, style1)
+
+            wb.save('example.xls')
+
         return final_data
 
 if __name__ == "__main__":

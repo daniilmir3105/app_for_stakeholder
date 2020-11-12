@@ -16,12 +16,12 @@ arr = ['Daniil', 'Miroshnichenko', 'Student', 'Peter the Great Polytechnical Uni
 # except FileNotFoundError as arr:
 font0 = xlwt.Font()
 font0.name = 'Times New Roman'
-font0.colour_index = 2
+font0.colour_index = xlwt.Style.colour_map['black']
 font0.bold = True
 
 font1 = xlwt.Font()
 font1.name = 'Times New Roman'
-font1.colour_index = 2
+font1.colour_index = xlwt.Style.colour_map['black']
 font1.bold = False
 
 style0 = xlwt.XFStyle()

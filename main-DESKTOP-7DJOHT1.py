@@ -117,26 +117,23 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         else: 
             final_data = os.startfile(r'C:\Users\lenovo\OneDrive - Peter the Great St. Petersburg Polytechnical University\Документы\Daniil\programming\python\projects\app_for_stakeholder\protect.png')
     
-        path = r'\database.xlsx'
-        if os.path.exists(path) == True:
+        if os.path.exists(r'.\database.xlsx') == True:
             # list of strings
-            self.__result.append(final)
 
             # Calling DataFrame constructor on list
-            df = pd.DataFrame(self.__result)
+            # df = pd.DataFrame(arr)
 
             wb = load_workbook('database.xlsx')
             ws = wb.active
 
-            for r in dataframe_to_rows(df, index=True, header=True):
-                ws.append(r)
+            # for r in dataframe_to_rows(df, index=True, header=True):
+            ws.append(self.__result)
 
             wb.save('database.xlsx')
         else:
             wb = Workbook()
             ws = wb.active
             ws.append(['Имя', 'Фамилия', 'Организация', 'Должность', 'Контактные данные', 'Уровень влияния', 'Заинтересованность', 'Нужды и потребности', 'Ожидания', 'Уровень заинтересованности', 'Эффект на ПМ', 'Проблематичность', 'Коммуникативность', 'Советы'])
-            self.__result.append(final)
             ws.append(self.__result)
             wb.save("database.xlsx")
 

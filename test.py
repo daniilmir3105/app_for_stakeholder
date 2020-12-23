@@ -1,7 +1,7 @@
 # from openpyxl import Workbook, load_workbook
 # from openpyxl.utils.dataframe import dataframe_to_rows
 # import pandas as pd 
-# import os
+import os
 
 # # path = os.getcwd()
 # # new_path = path +
@@ -28,3 +28,4 @@
 #     wb.save("sample.xlsx")
 
 # os
+print(os.path.abspath(__file__))

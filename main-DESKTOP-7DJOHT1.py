@@ -107,17 +107,17 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         final = final_result.make_simple_analys(x=result_x, y=result_y)
 
         if final == 'Данная личность не является стейкхолдером.':
-            final_data = os.startfile('.\not.png')
+            final_data = os.startfile('not.png')
         elif final == 'Данный стейкхолдер относится к блоку «Хорошие отношения»:\nC этими стейкхолдерами необходимо установить тесные рабочие отношения, потому что для них проект важен, они вовлечены в реализацию и активно влияют на процесс и результат.':
-            final_data = os.startfile('.\good_relation.png')
+            final_data = os.startfile(r'.\good_relation.png')
         elif final == 'Данный стейкхолдер относится к блоку «Мониторинг»:\nОни имеют власть над реализацией проекта, но не слишком заинтересованы в нем.\nПри таком сочетании факторов они могут стать источниками рисков, поэтому необходимы тщательный мониторинг и внимательный менеджмент.':
-            final_data = os.startfile('.\monitor.png')
+            final_data = os.startfile(r'.\monitor.png')
         elif final == 'Данный стейкхолдер относится к блоку «Низкий приоритет»: этот стейкхолдер вовлечен и относительно заинтересован, но от него зависит не так много, поэтому с точки зрения распределения менеджерского внимания, у него низкий приоритет.':
-            final_data = os.startfile('.\low_priority.png')
+            final_data = os.startfile(r'.\low_priority.png')
         else: 
-            final_data = os.startfile('.\protect.png')
+            final_data = os.startfile(r'.\protect.png')
     
-        if os.path.exists(r'.\database.xlsx') == True:
+        if os.path.exists(r'\database.xlsx') == True:
             # list of strings
 
             # Calling DataFrame constructor on list

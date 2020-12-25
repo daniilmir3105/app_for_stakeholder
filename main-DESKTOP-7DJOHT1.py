@@ -1,4 +1,3 @@
-import base_class_analys
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from interface_2 import Ui_Dialog
@@ -9,6 +8,7 @@ import xlwt
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
 import pandas as pd 
+import base_class_analys
 
 # making objects for analys
 analys_param_1 = base_class_analys.impact_level()
@@ -105,9 +105,10 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
 
         # what to do with this person
         final = final_result.make_simple_analys(x=result_x, y=result_y)
+        self.__result.append(final)
 
         if final == 'Данная личность не является стейкхолдером.':
-            final_data = os.startfile(r'\not.png')
+            final_data = os.startfile(r'.\not.png')
         elif final == 'Данный стейкхолдер относится к блоку «Хорошие отношения»:\nC этими стейкхолдерами необходимо установить тесные рабочие отношения, потому что для них проект важен, они вовлечены в реализацию и активно влияют на процесс и результат.':
             final_data = os.startfile(r'.\good_relation.png')
         elif final == 'Данный стейкхолдер относится к блоку «Мониторинг»:\nОни имеют власть над реализацией проекта, но не слишком заинтересованы в нем.\nПри таком сочетании факторов они могут стать источниками рисков, поэтому необходимы тщательный мониторинг и внимательный менеджмент.':
@@ -117,7 +118,7 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         else: 
             final_data = os.startfile(r'.\protect.png')
     
-        if os.path.exists(r'\database.xlsx') == True:
+        if os.path.exists(r'.\database.xlsx') == True:
             # list of strings
 
             # Calling DataFrame constructor on list

@@ -1,9 +1,14 @@
-import base_class_analys
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from interface_2 import Ui_Dialog
 import base_class_analys
 import become_result
+import os
+import xlwt
+from openpyxl import Workbook, load_workbook
+from openpyxl.utils.dataframe import dataframe_to_rows
+import pandas as pd 
+import base_class_analys
 
 # making objects for analys
 analys_param_1 = base_class_analys.impact_level()
@@ -49,8 +54,13 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         Method, thar return some data of person
         '''
 
-        # personal data
-        # ui = Ui_Dialog()
+        return self.__result
+        
+    def making_analys(self):
+        '''
+        This function will make analys and get the result 
+        '''
+        # score result of parametrs 
         name_line = self.lineEdit.text()
         family_name_line = self.lineEdit_2.text()
         organisation_name_line = self.lineEdit_3.text()   
@@ -80,14 +90,6 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         self.__result.append(param_6)
         self.__result.append(param_7)
         self.__result.append(param_8)
-
-        return self.__result
-        
-    def making_analys(self):
-        '''
-        This function will make analys and get the result 
-        '''
-        # score result of parametrs 
         g_1 = analys_param_1.make_analys(self.__result[5])
         g_2 = analys_param_2.make_analys(self.__result[6])
         g_3 = analys_param_3.make_analys(self.__result[7])
@@ -103,17 +105,52 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
 
         # what to do with this person
         final = final_result.make_simple_analys(x=result_x, y=result_y)
-        # print(self.__result)
-        return final
+        self.__result.append(final)
+
+        if final == 'Данная личность не является стейкхолдером.':
+            final_data = os.startfile(r'.\not.png')
+        elif final == 'Данный стейкхолдер относится к блоку «Хорошие отношения»:\nC этими стейкхолдерами необходимо установить тесные рабочие отношения, потому что для них проект важен, они вовлечены в реализацию и активно влияют на процесс и результат.':
+            final_data = os.startfile(r'.\good_relation.png')
+        elif final == 'Данный стейкхолдер относится к блоку «Мониторинг»:\nОни имеют власть над реализацией проекта, но не слишком заинтересованы в нем.\nПри таком сочетании факторов они могут стать источниками рисков, поэтому необходимы тщательный мониторинг и внимательный менеджмент.':
+            final_data = os.startfile(r'.\monitor.png')
+        elif final == 'Данный стейкхолдер относится к блоку «Низкий приоритет»: этот стейкхолдер вовлечен и относительно заинтересован, но от него зависит не так много, поэтому с точки зрения распределения менеджерского внимания, у него низкий приоритет.':
+            final_data = os.startfile(r'.\low_priority.png')
+        else: 
+            final_data = os.startfile(r'.\protect.png')
+    
+        if os.path.exists(r'.\database.xlsx') == True:
+            # list of strings
+
+            # Calling DataFrame constructor on list
+            # df = pd.DataFrame(arr)
+
+            wb = load_workbook('database.xlsx')
+            ws = wb.active
+
+            # for r in dataframe_to_rows(df, index=True, header=True):
+            ws.append(self.__result)
+
+            wb.save('database.xlsx')
+        else:
+            wb = Workbook()
+            ws = wb.active
+            ws.append(['Имя', 'Фамилия', 'Организация', 'Должность', 'Контактные данные', 'Уровень влияния', 'Заинтересованность', 'Нужды и потребности', 'Ожидания', 'Уровень заинтересованности', 'Эффект на ПМ', 'Проблематичность', 'Коммуникативность', 'Советы'])
+            ws.append(self.__result)
+            wb.save("database.xlsx")
+
+        self.__result = []
+
+        return final_data
 
 if __name__ == "__main__":
     # Новый экземпляр QApplication
     app = QtWidgets.QApplication(sys.argv)
     
-    # Сoздание инстанса класса , который мы создадим далее
+    # Сoздание инстанса класса, который мы создадим далее
     stakeholder = Stakeholder()
+    # stakeholder.get_data()
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
-    # stakeholder.get_data()
+    
     sys.exit(app.exec_())

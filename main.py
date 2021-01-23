@@ -23,11 +23,6 @@ analys_param_8 = base_class_analys.communicativity()
 # making object to become a result 
 final_result = become_result.result()
 
-# Dialog = QtWidgets.QDialog()
-# ui = Ui_Dialog()
-# ui.setupUi(Dialog)
-# Dialog.show()
-
 class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
     '''
     This class will have all fields and methods for stakeholder analys

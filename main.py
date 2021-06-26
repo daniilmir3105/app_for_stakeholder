@@ -7,7 +7,7 @@ import os
 import xlwt
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
-import pandas as pd 
+import pandas as pd
 import base_class_analys
 
 # making objects for analys
@@ -23,6 +23,7 @@ analys_param_8 = base_class_analys.communicativity()
 # making object to become a result 
 final_result = become_result.result()
 
+
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -33,7 +34,9 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
+
 Logo = resource_path("Logo.png")
+
 
 class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
     '''
@@ -62,7 +65,7 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         '''
 
         return self.__result
-        
+
     def making_analys(self):
         '''
         This function will make analys and get the result 
@@ -70,7 +73,7 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         # score result of parametrs 
         name_line = self.lineEdit.text()
         family_name_line = self.lineEdit_2.text()
-        organisation_name_line = self.lineEdit_3.text()   
+        organisation_name_line = self.lineEdit_3.text()
         position_line = self.lineEdit_4.text()
         contacts_line = self.lineEdit_5.text()
 
@@ -122,9 +125,9 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
             final_data = os.startfile(r'.\monitor.png')
         elif final == 'Данный стейкхолдер относится к блоку «Низкий приоритет»: этот стейкхолдер вовлечен и относительно заинтересован, но от него зависит не так много, поэтому с точки зрения распределения менеджерского внимания, у него низкий приоритет.':
             final_data = os.startfile(r'.\low_priority.png')
-        else: 
+        else:
             final_data = os.startfile(r'.\protect.png')
-    
+
         if os.path.exists(r'.\database.xlsx') == True:
             # list of strings
 
@@ -141,7 +144,9 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
         else:
             wb = Workbook()
             ws = wb.active
-            ws.append(['Имя', 'Фамилия', 'Организация', 'Должность', 'Контактные данные', 'Уровень влияния', 'Заинтересованность', 'Нужды и потребности', 'Ожидания', 'Уровень заинтересованности', 'Эффект на ПМ', 'Проблематичность', 'Коммуникативность', 'Советы'])
+            ws.append(['Имя', 'Фамилия', 'Организация', 'Должность', 'Контактные данные', 'Уровень влияния',
+                       'Заинтересованность', 'Нужды и потребности', 'Ожидания', 'Уровень заинтересованности',
+                       'Эффект на ПМ', 'Проблематичность', 'Коммуникативность', 'Советы'])
             ws.append(self.__result)
             wb.save("database.xlsx")
 
@@ -149,15 +154,16 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
 
         return final_data
 
+
 if __name__ == "__main__":
     # Новый экземпляр QApplication
     app = QtWidgets.QApplication(sys.argv)
-    
+
     # Сoздание инстанса класса, который мы создадим далее
     stakeholder = Stakeholder()
     # stakeholder.get_data()
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
-    
+
     sys.exit(app.exec_())

@@ -4,10 +4,10 @@
 block_cipher = None
 
 
-a = Analysis(['main.py'],
+a = Analysis(['C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/main.py'],
              pathex=['C:\\Users\\Daniil\\Documents\\Daniil\\python\\projects\\app_for_stakeholder'],
              binaries=[],
-             datas=[],
+             datas=[('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/good_relation.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/low_priority.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/monitor.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/not.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/protect.png', '.')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -20,19 +20,15 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           [],
-          exclude_binaries=True,
           name='main',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True )
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=True,
-               upx_exclude=[],
-               name='main')
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=False , icon='C:\\Users\\Daniil\\Documents\\Daniil\\python\\projects\\app_for_stakeholder\\Stakeholders.ico')

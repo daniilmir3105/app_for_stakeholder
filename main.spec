@@ -7,7 +7,7 @@ block_cipher = None
 a = Analysis(['C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/main.py'],
              pathex=['C:\\Users\\Daniil\\Documents\\Daniil\\python\\projects\\app_for_stakeholder'],
              binaries=[],
-             datas=[('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/good_relation.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/low_priority.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/monitor.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/not.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/protect.png', '.')],
+             datas=[('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/good_relation.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/low_priority.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/not.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/monitor.png', '.'), ('C:/Users/Daniil/Documents/Daniil/python/projects/app_for_stakeholder/protect.png', '.')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -31,4 +31,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='C:\\Users\\Daniil\\Documents\\Daniil\\python\\projects\\app_for_stakeholder\\Stakeholders.ico')
+          console=False , icon='C:\\Users\\Daniil\\Documents\\Daniil\\python\\projects\\app_for_stakeholder\\i.ico')

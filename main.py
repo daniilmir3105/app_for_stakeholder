@@ -8,7 +8,6 @@ import xlwt
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
 import pandas as pd
-import base_class_analys
 
 # making objects for analys
 analys_param_1 = base_class_analys.impact_level()
@@ -47,7 +46,7 @@ class Stakeholder(QtWidgets.QMainWindow, Ui_Dialog):
 
     def __init__(self):
         '''
-        Construktor of our class
+        Konstruktor of our class
         '''
         super().__init__()
 
